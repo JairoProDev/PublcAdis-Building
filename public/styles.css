@@ -1,31 +1,79 @@
-/* Estilos CSS aquí */
-
 /* Estilos generales */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f0fcfe;
   }
   
   .container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    
   }
   
   h1 {
     text-align: center;
-    color: #333;
+    color: #B7D9E2;
     margin-bottom: 20px;
   }
   
+  /* Navbar */
+  .navbar {
+    display: flex;
+    height: 36px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1F5372;
+    color: #fff;
+    padding: 0px 2px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+  
+  /* Main Content */
+  .main-content {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 70px; /* Ajustar para dar espacio al navbar */
+  }
+  
+  .anuncios-column {
+    flex: 1;
+    max-width: calc(66.66% - 20px);
+  }
+  
+  .form-column {
+    display: none;
+
+    flex: 1;
+    max-width: calc(33.33% - 20px);
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 10px 24px 16px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .show-form .form-column {
+    display: flex;
+}
+
   /* Formulario */
   #anuncio-form {
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.5);
     padding: 20px;
     border-radius: 35px;
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);  }
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+  }
   
   label {
     color: #555;
@@ -47,10 +95,10 @@ body {
   }
   
   input[type="text"]::placeholder,
-textarea::placeholder {
-  color: #999;
-}
-
+  textarea::placeholder {
+    color: #999;
+  }
+  
   button[type="submit"] {
     background-color: #007bff;
     color: #fff;
@@ -70,14 +118,13 @@ textarea::placeholder {
     list-style: none;
     padding: 0;
     display: grid;
-    gap: 0.5px;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(calc(33.33% - 20px), 1fr));
   }
   
   #anuncios-list li {
     background-color: #fff;
     padding: 20px;
-    margin-bottom: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -116,12 +163,15 @@ textarea::placeholder {
   .anuncio-buttons button:hover {
     background-color: #0056b3;
   }
-
+  
   /* Estilos Responsivos */
-  @media screen and (max-width: 600px) {
-    input[type="text"],
-    textarea {
-      width: 100%;
+  @media screen and (max-width: 768px) {
+    .anuncios-column,
+    .form-column {
+      max-width: 100%;
     }
+    .show-form .form-column {
+      display: flex;
+  }
   }
   
