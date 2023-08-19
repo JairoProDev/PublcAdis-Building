@@ -4,48 +4,200 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
     <title>Tu Plataforma de Anuncios</title>
 </head>
 <body>
-    <div class="container">
-        <nav class="navbar">    
-            <h1>PublicAdis</h1>
-            <button id="toggle-form-button">Anunciar</button>
-        </nav>
+    <div class="container"> 
         <div class="main-content">
+            <aside class="sidebar">
+                <div class="logo">
+                    <img src="images/logo.png" alt="logo">
+                    <h2>PublicAdis: Anunc<span class="blue-text-ia">IA</span></h2>
+                </div>
+                <div class="search-bar hidden">
+                    <input type="text" placeholder="Buscar anuncio...">
+                </div>
+                <ul class="links">
+                    <h4>Productos</h4>
+                    <ul class="enlaces">
+                        <li>
+                            <span class="material-symbols-outlined">home</span>
+                            <a href="#">Bienes Raíces</a>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined">directions_car</span>
+                            <a href="#">Vehículos</a>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined">kitchen</span>
+                            <a href="#">Electrodomésticos</a>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined">devices</span>
+                            <a href="#">Tecnología</a>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined">shopping_basket</span>
+                            <a href="#">Moda y Accesorios</a>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined">house</span>
+                            <a href="#">Hogar y Jardín</a>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined">spa</span>
+                            <a href="#">Salud y Belleza</a>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined">theaters</span>
+                            <a href="#">Entretenimiento</a>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined">pets</span>
+                            <a href="#">Mascotas</a>
+                        </li>
+                    </ul>
+                    <hr>
+                    <h4>Servicios</h4>
+                    <ul class="enlaces">
+                        <li>
+                            <span class="material-symbols-outlined">engineering</span>
+                            <a href="#">Profesionales</a>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined">school</span>
+                            <a href="#">Clases y Cursos</a>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined">event</span>
+                            <a href="#">Eventos</a>
+                        </li>
+                    </ul>
+                    <hr>
+                    <h4>Empleos</h4>
+                    <ul class="enlaces">
+                        <li>
+                            <span class="material-symbols-outlined">restaurant</span>
+                            <a href="#">Cocina</a>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined">directions_bus</span>
+                            <a href="#">Conducción</a>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined">school</span>
+                            <a href="#">Docencia</a>
+                        </li>
+                    </ul>
+                    <hr>
+                    <h4>Vehículos</h4>
+                    <ul class="enlaces">
+                        <li>
+                            <span class="material-symbols-outlined">directions_car</span>
+                            <a href="#">Autos</a>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined">directions_bike</span>
+                            <a href="#">Motos</a>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined">local_shipping</span>
+                            <a href="#">Camiones</a>
+                        </li>
+                    </ul>
+                    <hr>
+                    <h4>Inmuebles</h4>
+                    <ul class="enlaces">
+                        <li>
+                            <span class="material-symbols-outlined">apartment</span>
+                            <a href="#">Apartamentos</a>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined">house</span>
+                            <a href="#">Casas</a>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined">landscape</span>
+                            <a href="#">Terrenos</a>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined">store</span>
+                            <a href="#">Locales</a>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined">work</span>
+                            <a href="#">Oficinas</a>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined">storefront</span>
+                            <a href="#">Bodegas</a>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined">store_mall_directory</span>
+                            <a href="#">Almacenes</a>
+                        </li>
+                    </ul>
+                    <hr>
+                    <h4>Varios</h4>
+                    <ul class="enlaces">
+                        <li>
+                            <span class="material-symbols-outlined">bar_chart</span>
+                            <a href="#">Educación</a>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined">shopping_basket</span>
+                            <a href="#">Ropa</a>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined">settings</span>
+                            <a href="#">Servicios</a>
+                        </li>
+                    </ul>
+                        <!-- Botón para Publicar Anuncio -->
+                        <li class="publish-button">
+                            <span class="material-symbols-outlined">add_circle_outline</span>
+                            <button id="toggle-form-button">                                        
+                                <a href="#">Publicar Anuncio</a>
+                            </button>
+                        </li>
+                </ul>
+            </aside>
             <div class="anuncios-column">
                 <ul id="anuncios-list"></ul>
             </div>
+
             <!-- Formulario para crear un anuncio -->
-            <div class="form-column">
-                <form id="anuncio-form">
-                    <!-- Campos del formulario -->
-                    <label for="tipo">Tipo:</label>
-                    <select id="tipo" name="tipo" required>
-                        <option value="producto">Producto</option>
-                        <option value="servicio">Servicio</option>
-                        <option value="empleo">Empleo</option>
-                    </select>
-                    <label for="titulo">Título:</label>
-                    <input type="text" id="titulo" name="titulo" required>
-                    <label for="descripcion">Descripción:</label>
-                    <textarea id="descripcion" name="descripcion" required></textarea>
-                    <label for="nombreAnunciante">Nombre del Anunciante:</label>
-                    <input type="text" id="nombreAnunciante" name="nombreAnunciante" required>
-                    <label for="numerosContacto">Números de Contacto:</label>
-                    <input type="text" id="numerosContacto" name="numerosContacto" required>
-                    <label for="categoria">Categoría:</label>
-                    <input type="text" id="categoria" name="categoria" required>
-                    <label for="ubicacion">Ubicación:</label>
-                    <input type="text" id="ubicacion" name="ubicacion" required>
-                    <label for="monto">Monto:</label>
-                    <input type="number" id="monto" name="monto" min="0">
-                    <label for="imagenes">Imágenes:</label>
-                    <input type="text" id="imagenes" name="imagenes">
-                    <button type="submit">Publicar Anuncio</button>
-                </form>
+            <div class="form-column" id="anuncio-form">
+            <form >
+                                <!-- Campos del formulario -->
+                                <label for="tipo">Tipo:</label>
+                                <select id="tipo" name="tipo" required>
+                                    <option value="producto">Producto</option>
+                                    <option value="servicio">Servicio</option>
+                                    <option value="empleo">Empleo</option>
+                                </select>
+                                <label for="titulo">Título:</label>
+                                <input type="text" id="titulo" name="titulo" required>
+                                <label for="descripcion">Descripción:</label>
+                                <textarea id="descripcion" name="descripcion" required></textarea>
+                                <label for="nombreAnunciante">Nombre del Anunciante:</label>
+                                <input type="text" id="nombreAnunciante" name="nombreAnunciante" required>
+                                <label for="numerosContacto">Números de Contacto:</label>
+                                <input type="text" id="numerosContacto" name="numerosContacto" required>
+                                <label for="categoria">Categoría:</label>
+                                <input type="text" id="categoria" name="categoria" required>
+                                <label for="ubicacion">Ubicación:</label>
+                                <input type="text" id="ubicacion" name="ubicacion" required>
+                                <label for="monto">Monto:</label>
+                                <input type="number" id="monto" name="monto" min="0">
+                                <label for="imagenes">Imágenes:</label>
+                                <input type="text" id="imagenes" name="imagenes">
+                                <button type="submit">Publicar Anuncio</button>
+            </form>
             </div>
         </div>
+
     </div>
     <script src="script.js"></script>
 </body>
