@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const anuncioForm = document.querySelector('.form-column'); // Cambio en esta línea
+  const anuncioForm = document.querySelector('.form-column');
   const anunciosList = document.getElementById('anuncios-list');
   const toggleFormButton = document.getElementById("toggle-form-button");
   const formColumn = document.querySelector(".form-column");
@@ -59,14 +59,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const li = document.createElement('li');
       li.className = 'anuncio-card';
 
-      const titulo = crearElemento('h3', 'anuncio-titulo', anuncio.titulo);
+      const adTitle = crearElemento('h3', 'anuncio-titulo', anuncio.adtitle);
       const descripcion = crearElemento('p', 'anuncio-descripcion', anuncio.descripcion);
       const categoria = crearElemento('p', '', `Categoría: ${anuncio.categoria}`);
       const ubicacion = crearElemento('p', '', `Ubicación: ${anuncio.ubicacion}`);
       const monto = crearElemento('p', '', `Monto: ${formatoMonto(anuncio.monto)}`);
       const fechaPublicacion = crearElemento('p', '', `Fecha de Publicación: ${formatoFecha(anuncio.fechaPublicacion)}`);
 
-      li.appendChild(titulo);
+      li.appendChild(adTitle);
       li.appendChild(descripcion);
       li.appendChild(categoria);
       li.appendChild(ubicacion);
@@ -99,20 +99,20 @@ document.addEventListener('DOMContentLoaded', () => {
   // Obtener datos del formulario de anuncio
   function obtenerDatosFormulario(form) {
       const tipo = form.elements.tipo.value;
-      const titulo = form.elements.titulo.value;
+      const adTitle = form.elements.adTitle.value;
       const descripcion = form.elements.descripcion.value;
-      const categoria = form.elements.categoria.value;
-      const ubicacion = form.elements.ubicacion.value;
+    //   const categoria = form.elements.categoria.value;
+    //  const ubicacion = form.elements.ubicacion.value;
       const monto = form.elements.monto.value === '' ? null : parseFloat(form.elements.monto.value);
       const fechaActual = new Date();
       const fechaPublicacion = fechaActual.toLocaleString(); // Fecha y hora actual
 
       const nuevoAnuncio = {
           tipo,
-          titulo,
+          adTitle,
           descripcion,
-          categoria,
-          ubicacion,
+          // categoria,
+          // ubicacion,
           monto,
           fechaPublicacion,
       };

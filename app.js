@@ -11,7 +11,7 @@ mongoose.connect('mongodb+srv://JairoProDev:isOgCEALmpQsfA86@cluster0.cykdeq5.mo
 });
 
 const anuncioSchema = new mongoose.Schema({
-  titulo: String,
+  adTitle: String,
   descripcion: String,
 });
 
