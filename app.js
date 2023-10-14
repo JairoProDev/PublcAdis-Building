@@ -1,6 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
+const adRoutes = require('./routes/adRoutes'); // Ruta a los archivos de rutas
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -9,6 +11,15 @@ mongoose.connect('mongodb+srv://JairoProDev:isOgCEALmpQsfA86@cluster0.cykdeq5.mo
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
+
+
+app.use(express.json());
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use('/api', adRoutes);
+
+/*
+app.use('/api', adRoutes); // Utiliza las rutas de anuncio
 
 const anuncioSchema = new mongoose.Schema({
   adTitle: String,
@@ -34,7 +45,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 /* app.get('/', (req, res) => {
     res.send('¡Hola, mundo!');
   }); */
-
+/*
 app.get('/api/anuncios', async (req, res) => {
   try {
     const anuncios = await Anuncio.find();
@@ -44,6 +55,13 @@ app.get('/api/anuncios', async (req, res) => {
   }
 });
 
+*/
+
 app.listen(PORT, () => {
   console.log(`Servidor en línea en http://localhost:${PORT}`);
+});
+
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ error: 'Error interno del servidor' });
 });
