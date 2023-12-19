@@ -27,6 +27,24 @@ body {
 
 }
 
+/* Estilos para el formulario de búsqueda en la barra de navegación */
+.nav-wrapper form {
+  display: flex;
+  max-width: 500px;
+  height: 100%;
+  margin-left: auto;
+  padding: 0 20px;
+}
+
+.nav-wrapper form input[type="text"] {
+  flex-grow: 1;
+  margin-right: 10px;
+  padding: 5px;
+}
+
+.nav-wrapper form button {
+  padding: 5px 10px;
+}
 h1 {
   text-align: center;
   color: #b7d9e2;

@@ -129,3 +129,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Llamada inicial para obtener anuncios al cargar la página
   obtenerAnuncios();
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems);
+});
