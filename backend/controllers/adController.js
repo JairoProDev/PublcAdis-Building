@@ -1,10 +1,24 @@
 const Anuncio = require('../models/adModel');
+const multer = require('multer');
+const upload = multer({ dest: 'uploads/' });
+
+const uploadMiddleware = upload.single('image');
 
 const crearAnuncio = async (req, res) => {
+  const { adTitle, descripcion, numerosContacto, monto } = req.body;
+  const image = req.file;
+
   try {
-    const nuevoAnuncio = new Anuncio(req.body);
+    const nuevoAnuncio = new Anuncio({
+      adTitle,
+      descripcion,
+      numerosContacto,
+      monto,
+      image
+    });
+
     await nuevoAnuncio.save();
-    res.status(201).json({ mensaje: 'Anuncio creado exitosamente' });
+    res.status(201).json({ mensaje: 'Anuncio creado exitosamente', anuncio: nuevoAnuncio });
   } catch (error) {
     res.status(500).json({ error: 'Error al crear el anuncio' });
   }
@@ -25,4 +39,4 @@ const obtenerAnuncios = async (req, res) => {
   }
 };
 
-module.exports = { crearAnuncio, obtenerAnuncios };
+module.exports = { uploadMiddleware, crearAnuncio, obtenerAnuncios };
