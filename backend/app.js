@@ -1,6 +1,5 @@
 require('dotenv').config();
 const express = require('express');
-const { uploadMiddleware, crearAnuncio } = require('./controllers/adController');
 const mongoose = require('mongoose');
 const path = require('path');
 const adRoutes = require('./routes/adRoutes');
@@ -11,27 +10,30 @@ const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors());
-// Usa la variable de entorno MONGODB_URI o proporciona una cadena de conexión predeterminada
-const mongoURI = process.env.MONGODB_URI || 'mongodb+srv://JairoProDev:isOgCEALmpQsfA86@cluster0.cykdeq5.mongodb.net/?retryWrites=true&w=majority';
+app.use(express.json());
+app.use(express.static(path.join(__dirname, 'public'))); // Servir archivos estáticos
 
-mongoose.connect(mongoURI, {
+// MongoDB connection
+mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+}).then(() => {
+  console.log('Connected to MongoDB');
+}).catch((err) => {
+  console.error('Error connecting to MongoDB', err);
+  process.exit(1); // Detener la aplicación si no se puede conectar a la base de datos
 });
 
-
-app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
-
+// Routes
 app.use('/api', adRoutes);
 
-app.use(express.static(path.join(__dirname, 'public')));
-
+// Start server
 app.listen(PORT, () => {
-  console.log(`Servidor en línea en http://localhost:${PORT}`);
+  console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
 
+// Error handling middleware
 app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({ error: 'Error interno del servidor' });
+  console.error(err);
+  res.status(err.status || 500).json({ error: err.message || 'Error interno del servidor' });
 });

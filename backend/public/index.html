@@ -1,36 +1,65 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Metadatos -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="PublicAdis es una plataforma de anuncios clasificados en línea.">
+    <meta name="keywords" content="anuncios, clasificados, publicidad, ventas, compras, productos, servicios, empleos, inmuebles, vehículos, bienes raíces, electrodomésticos, tecnología, moda, accesorios, hogar, jardín, salud, belleza, entretenimiento, mascotas, profesionales, clases, cursos, eventos, cocina, conducción, docencia, autos, motos, camiones, apartamentos, casas, terrenos, locales, oficinas, bodegas, almacenes, educación, ropa, servicios">
+    <meta name="author" content="PublicAdis">
+    <meta name="owner" content="PublicAdis">
+    <meta name="rating" content="General">
+    <meta name="revisit-after" content="1 day">
+    <meta name="language" content="Spanish">
+    <meta name="generator" content="Visual Studio Code">
+    <meta name="distribution" content="Global">
+    <meta name="theme-color" content="#2196f3">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="PublicAdis">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- Estilos -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-    <link rel="icon" href="images/logo.ico" type="image/x-icon">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/logo.ico" type="image/x-icon">
+
+    <!-- Título de la página -->
     <title>Tu Plataforma de Anuncios</title>
 </head>
+
 <body>
     <header class="header">
         <nav class="blue darken-2">
             <div class="nav-wrapper container">
+                <!-- Logo y Enlace Principal -->
                 <a href="/" class="brand-logo">PublicAdis</a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
+                <!-- Icono del Menú para Dispositivos Móviles -->
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+                    <i class="material-icons">menu</i>
+                </a>
+
+                <!-- Menú de Navegación -->
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="/browse">Explorar</a></li>
                     <li><a href="/post">Publicar Anuncio</a></li>
-                    <li><a href="/favorites">Favoritos</a></li>
-                    <li><a href="/messages">Mensajes</a></li>
-                    <li><a href="/profile">Mi Perfil</a></li>
                     <li><a href="/logout">Salir</a></li>
                 </ul>
+
+                <!-- Formulario de Búsqueda -->
                 <form action="/search" method="GET" class="right">
                     <input type="text" placeholder="Buscar Anuncio..." required>
-                    <button type="submit">Buscar</button>
+                    <button type="submit" class="waves-effect waves-light btn">Buscar</button>
                 </form>
             </div>
         </nav>
 
+        <!-- Menú Lateral para Dispositivos Móviles -->
         <ul class="sidenav" id="mobile-demo">
             <li><a href="/browse">Explorar</a></li>
             <li><a href="/post">Publicar Anuncio</a></li>
@@ -39,14 +68,15 @@
             <li><a href="/profile">Mi Perfil</a></li>
             <li><a href="/logout">Salir</a></li>
         </ul>
-
     </header>
-        <!-- <div class="post">
-            <button>
-                <a href="#">AnuncIAr</a>
 
-            </button> -->
-            
+    <!-- Sección de Publicación de Anuncios (descomentada) -->
+    <div class="post">
+        <button>
+            <a href="#">Anunciar</a>
+        </button>
+    </div>
+
         </div>
     <div class="container">
         <div class="main-content">
@@ -55,10 +85,90 @@
                     <img src="images/logo.png" alt="logo">
                     <h2>PublicAdis: Anunc<span class="blue-text-ia">IA</span></h2>
                 </div>
-                <div class="search-bar hidden">
-                    <input type="text" placeholder="Buscar anuncio...">
-                </div>
-                <ul class="links">
+
+                <!-- Categorías de Productos -->
+                <ul class="category-list">
+                    
+                    <h4>Servicios</h4>
+                    <ul class="enlaces">
+                        <li>
+                            <span class="material-symbols-outlined">engineering</span>
+                            <a href="#">Profesionales</a>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined">school</span>
+                            <a href="#">Clases y Cursos</a>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined">event</span>
+                            <a href="#">Eventos</a>
+                        </li>
+                    </ul>
+
+                    <h4>Empleos</h4>
+                    <ul class="enlaces">
+                        <li>
+                            <span class="material-symbols-outlined">restaurant</span>
+                            <a href="#">Cocina</a>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined">directions_bus</span>
+                            <a href="#">Conducción</a>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined">school</span>
+                            <a href="#">Docencia</a>
+                        </li>
+                    </ul>
+
+                    <h4>Vehículos</h4>
+                    <ul class="enlaces">
+                        <li>
+                            <span class="material-symbols-outlined">directions_car</span>
+                            <a href="#">Autos</a>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined">directions_bike</span>
+                            <a href="#">Motos</a>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined">local_shipping</span>
+                            <a href="#">Camiones</a>
+                        </li>
+                    </ul>
+
+                    <h4>Inmuebles</h4>
+                    <ul class="enlaces">
+                        <li>
+                            <span class="material-symbols-outlined">apartment</span>
+                            <a href="#">Apartamentos</a>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined">house</span>
+                            <a href="#">Casas</a>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined">landscape</span>
+                            <a href="#">Terrenos</a>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined">store</span>
+                            <a href="#">Locales</a>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined">work</span>
+                            <a href="#">Oficinas</a>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined">storefront</span>
+                            <a href="#">Bodegas</a>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined">store_mall_directory</span>
+                            <a href="#">Almacenes</a>
+                        </li>
+                    </ul>
+
                     <h4>Productos</h4>
                     <ul class="enlaces">
                         <li>
@@ -98,87 +208,7 @@
                             <a href="#">Mascotas</a>
                         </li>
                     </ul>
-                    <hr>
-                    <h4>Servicios</h4>
-                    <ul class="enlaces">
-                        <li>
-                            <span class="material-symbols-outlined">engineering</span>
-                            <a href="#">Profesionales</a>
-                        </li>
-                        <li>
-                            <span class="material-symbols-outlined">school</span>
-                            <a href="#">Clases y Cursos</a>
-                        </li>
-                        <li>
-                            <span class="material-symbols-outlined">event</span>
-                            <a href="#">Eventos</a>
-                        </li>
-                    </ul>
-                    <hr>
-                    <h4>Empleos</h4>
-                    <ul class="enlaces">
-                        <li>
-                            <span class="material-symbols-outlined">restaurant</span>
-                            <a href="#">Cocina</a>
-                        </li>
-                        <li>
-                            <span class="material-symbols-outlined">directions_bus</span>
-                            <a href="#">Conducción</a>
-                        </li>
-                        <li>
-                            <span class="material-symbols-outlined">school</span>
-                            <a href="#">Docencia</a>
-                        </li>
-                    </ul>
-                    <hr>
-                    <h4>Vehículos</h4>
-                    <ul class="enlaces">
-                        <li>
-                            <span class="material-symbols-outlined">directions_car</span>
-                            <a href="#">Autos</a>
-                        </li>
-                        <li>
-                            <span class="material-symbols-outlined">directions_bike</span>
-                            <a href="#">Motos</a>
-                        </li>
-                        <li>
-                            <span class="material-symbols-outlined">local_shipping</span>
-                            <a href="#">Camiones</a>
-                        </li>
-                    </ul>
-                    <hr>
-                    <h4>Inmuebles</h4>
-                    <ul class="enlaces">
-                        <li>
-                            <span class="material-symbols-outlined">apartment</span>
-                            <a href="#">Apartamentos</a>
-                        </li>
-                        <li>
-                            <span class="material-symbols-outlined">house</span>
-                            <a href="#">Casas</a>
-                        </li>
-                        <li>
-                            <span class="material-symbols-outlined">landscape</span>
-                            <a href="#">Terrenos</a>
-                        </li>
-                        <li>
-                            <span class="material-symbols-outlined">store</span>
-                            <a href="#">Locales</a>
-                        </li>
-                        <li>
-                            <span class="material-symbols-outlined">work</span>
-                            <a href="#">Oficinas</a>
-                        </li>
-                        <li>
-                            <span class="material-symbols-outlined">storefront</span>
-                            <a href="#">Bodegas</a>
-                        </li>
-                        <li>
-                            <span class="material-symbols-outlined">store_mall_directory</span>
-                            <a href="#">Almacenes</a>
-                        </li>
-                    </ul>
-                    <hr>
+
                     <h4>Varios</h4>
                     <ul class="enlaces">
                         <li>
@@ -206,39 +236,29 @@
             <div class="anuncios-column">
                 <ul id="anuncios-list"></ul>
             </div>
-
-            <!-- Formulario para crear un anuncio -->
-            <div class="form-column" id="anuncio-form">
-            <form id="adForm" action="/upload_endpoint" method="post" enctype="multipart/form-data">
-                                <!-- Campos del formulario -->
-                                <label for="tipo">Tipo:</label>
-                                <select id="tipo" name="tipo" required>
-                                    <option value="producto">Producto</option>
-                                    <option value="servicio">Servicio</option>
-                                    <option value="empleo">Empleo</option>
-                                </select>
-                                <label for="adTitle">Título:</label>
-                                <input type="text" id="adTitle" name="titulo" required>
-                                <label for="descripcion">Descripción:</label>
-                                <textarea id="descripcion" name="descripcion" required></textarea>
-                                <!-- <label for="nombreAnunciante">Nombre del Anunciante:</label> -->
-                                <!-- <input type="text" id="nombreAnunciante" name="nombreAnunciante" required> -->
-                                <label for="numerosContacto">Números de Contacto:</label>
-                                <input type="tel" id="numerosContacto" name="numerosContacto" placeholder="Ejemplo: 987 654 321" required>
-                                <!-- <label for="categoria">Categoría:</label> -->
-                                <!-- <input type="text" id="categoria" name="categoria" required> -->
-                                <!-- <label for="ubicacion">Ubicación:</label> -->
-                                <!-- <input type="text" id="ubicacion" name="ubicacion" required> -->
-                                <label for="monto">Monto:</label>
-                                <input type="number" id="monto" name="monto" min="0">
-
-                                <label for="imageUpload">Sube imágenes de tu anuncio:</label>
-                                <input type="file" id="imageUpload" name="image" accept="image/*">
-                                <button type="submit">Publicar Anuncio</button>
-            </form>
+<!-- Formulario para crear un anuncio -->
+<div class="form-column" id="ad-form">
+    <form id="adForm" action="/api/anuncios" method="POST">
+        <fieldset>
+            <legend>Información del anuncio</legend>
+            <label for="title">Título:</label>
+            <input type="text" id="title" name="title" required>
+            <label for="description">Descripción:</label>
+            <textarea id="description" name="description" required></textarea>
+        </fieldset>
+        <button type="submit">Publicar Anuncio</button>
+    </form>
+</div>
+            <!-- Añade este div en tu HTML -->
+            <div id="anuncio" style="display: none;">
+                <h1 id="titulo"></h1>
+                <p id="description"></p>
+                <img id="imagen" src="" alt="Imagen del anuncio">
+                <button id="llamar">Llamar</button>
+                <button id="whatsapp">WhatsApp</button>
             </div>
         </div>
-    </div>
+    </div>  
 
     </div>
     <script src="script.js"></script>

@@ -1,8 +1,8 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const { crearAnuncio, obtenerAnuncios } = require('../controllers/adController');
+const { createAd, getAds } = require("../controllers/adController");
 
-router.post('/anuncios', crearAnuncio);
-router.get('/anuncios', obtenerAnuncios);
+router.post("/anuncios", createAd);
+router.get("/anuncios", getAds);
 
 module.exports = router;

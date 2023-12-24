@@ -1,33 +1,38 @@
-/* Importing Google font - Poppins */
+:root {
+  --main-color: #007bff;
+  --secondary-color: #0056b3;
+  --font-color: #333;
+  --placeholder-color: #999;
+  --background-color: #f0fcfe;
+  --font-family: "Poppins", sans-serif;
+  --input-border: 1px solid #ccc;
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
-/* Estilos generales */
+/* Reset CSS */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: var(--font-family);
 }
 
 body {
   height: 100vh;
   width: 100%;
-  background-image: url("images/hero-bg.jpg");
-  background-position: center;
-  background-size: cover;
-  background-color: #f0fcfe;
+  background: var(--background-color) url("images/hero-bg.jpg") center/cover;
 }
 
-/* header for main content */
+/* Header */
 .header {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
- display: flex ;
-
+  display: flex;
 }
 
-/* Estilos para el formulario de búsqueda en la barra de navegación */
+/* Navigation */
 .nav-wrapper form {
   display: flex;
   max-width: 500px;
@@ -36,22 +41,117 @@ body {
   padding: 0 20px;
 }
 
-.nav-wrapper form input[type="text"] {
-  flex-grow: 1;
-  margin-right: 10px;
+.nav-wrapper form input[type="text"],
+.nav-wrapper form button {
   padding: 5px;
 }
 
-.nav-wrapper form button {
-  padding: 5px 10px;
+.nav-wrapper form input[type="text"] {
+  flex-grow: 1;
+  margin-right: 10px;
 }
+
+.nav-wrapper form button {
+  padding-right: 10px;
+}
+
+/* Formulario */
+.form-column {
+  display: flex;
+  flex-direction: column; /* Alinea los elementos del formulario verticalmente */
+  align-items: center; /* Centra los elementos del formulario horizontalmente */
+
+  flex-grow: 1;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 10px 24px 16px rgba(0, 0, 0, 0.1);
+  max-width: 300px; /* Limita el ancho del formulario */
+  margin: 0 auto; /* Centra el formulario en la página */
+}
+
+.show-form .form-column {
+  display: flex;
+}
+
+.ad-form {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  margin: 0;
+}
+
+label {
+  color: #555;
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: var(--input-border);
+  border-radius: 4px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: var(--font-color);
+}
+
+input[type="text"]::placeholder,
+textarea::placeholder {
+  color: var(--placeholder-color);
+}
+
+button[type="submit"] {
+  background-color: var(--main-color);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.4s;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Estilos Responsivos */
+@media screen and (max-width: 768px) {
+  .anuncios-column,
+  .form-column {
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 100%;
+  }
+
+  .show-form .form-column {
+    display: flex;
+  }
+
+  .main-content {
+    padding-left: 0;
+  }
+}
+
+.formulario-edicion {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 h1 {
   text-align: center;
   color: #b7d9e2;
   margin-bottom: 20px;
 }
 
-/* Navbar Styles */
 .navbar {
   display: flex;
   height: 36px;
@@ -74,86 +174,16 @@ h1 {
   justify-content: space-around;
   align-items: flex-start;
   flex-wrap: wrap;
-  margin: 40px 40px 0; /* Ajustar para dar espacio al navbar */
+  margin: 40px 40px 0;
   z-index: 1;
   position: relative;
 }
 
-/* Columns */
 .anuncios-column {
   flex: 1;
   justify-content: flex-start;
 }
 
-.form-column {
-  display: none;
-  flex-grow: 1;
-  background-color: rgba(255, 255, 255, 0.2);
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 10px 24px 16px rgba(0, 0, 0, 0.1);
-}
-
-.show-form .form-column {
-  display: flex;
-}
-
-/* Formulario */
-#anuncio-form {
-  background-color: rgba(255, 255, 255, 0.5);
-  padding: 20px;
-  border-radius: 35px;
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
-  max-width: 250px;
-  margin: 0; /* Quita el margen vertical */
-  position: fixed; /* Cambia a posición fija */
-  top: 20px; /* Alinear en el centro vertical */
-  right: 0px; /* Alinear a la derecha */
-}
-
-#anuncio-form.show-form {
-  display: block;
-}
-
-
-label {
-  color: #555;
-  display: block;
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 2px;
-}
-
-input[type="text"],
-textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-bottom: 8px;
-  font-size: 14px;
-  color: #333;
-}
-
-input[type="text"]::placeholder,
-textarea::placeholder {
-  color: #999;
-}
-
-button[type="submit"] {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 12px;
-  cursor: pointer;
-  margin-top: 10px;
-  transition: background-color 0.4s;
-}
-
-button[type="submit"]:hover {
-  background-color: #0056b3;
-}
 
 /* Lista de Anuncios */
 #anuncios-list {
@@ -162,27 +192,42 @@ button[type="submit"]:hover {
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  /* Añadido para alinear los elementos al centro */
+  align-items: center;
 }
 
 .anuncio-card {
   background-color: #fff;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  /* Añadido para mejorar la transición */
+  transition: box-shadow 0.3s ease;
+}
+
+.anuncio-card:hover {
+  /* Añadido para mejorar la interactividad */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .anuncio-titulo {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin-bottom: 0.5rem;
+  color: #333;
+  font-weight: 600;
+  /* Añadido para mejorar la legibilidad */
+  line-height: 1.4;
 }
 
 .anuncio-descripcion {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #666;
   flex-grow: 1;
+  /* Añadido para mejorar la legibilidad */
+  line-height: 1.6;
 }
 
 .anuncio-buttons {
@@ -197,31 +242,17 @@ button[type="submit"]:hover {
   color: #fff;
   border: none;
   padding: 6px 12px;
-  border-radius: 8px;
+  border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.4s;
+  /* Añadido para mejorar la interactividad */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .anuncio-buttons button:hover {
   background-color: #0056b3;
-}
-
-/* Estilos Responsivos */
-@media screen and (max-width: 768px) {
-  .anuncios-column,
-  .form-column {
-    flex-direction: column;
-    align-items: flex-start;
-    max-width: 100%;
-  }
-
-  .show-form .form-column {
-    display: flex;
-  }
-
-  .main-content {
-    padding-left: 0;
-  }
+  /* Añadido para mejorar la interactividad */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .sidebar {
@@ -239,6 +270,8 @@ button[type="submit"]:hover {
   border-right: 1px solid rgba(255, 255, 255, 0.7);
   transition: width 0.3s ease;
   padding-bottom: 30px;
+  /* Añadido para mejorar la interactividad */
+  overflow-x: hidden;
 }
 
 .sidebar:hover {
@@ -250,6 +283,8 @@ button[type="submit"]:hover {
   display: flex;
   align-items: center;
   padding: 10px 2px 5px 5px;
+  /* Añadido para mejorar la transición */
+  transition: padding 0.3s ease;
 }
 
 .logo img {
@@ -262,73 +297,79 @@ button[type="submit"]:hover {
   font-weight: 600;
   margin-left: 15px;
   display: none;
+  /* Añadido para mejorar la legibilidad */
+  line-height: 1.4;
 }
 
 .sidebar:hover .logo h2 {
   display: block;
 }
 
-.sidebar .links {
+.sidebar .category-list {
   list-style: none;
   margin-top: 5px;
   overflow-y: auto;
   scrollbar-width: none;
   height: calc(100% - 140px);
+  /* Añadido para mejorar la interactividad */
+  padding: 0 0px;
 }
 
-.sidebar .links::-webkit-scrollbar {
+.sidebar .category-list::-webkit-scrollbar {
   display: none;
 }
 
-.links li {
+.category-list li {
   display: flex;
   border-radius: 12px;
   align-items: center;
+
 }
 
-.links li:hover {
+.category-list li:hover {
   cursor: pointer;
   background: #fff;
 }
 
-.links h4 {
+.category-list h4 {
   color: #222;
   font-weight: 500;
   display: none;
   margin-bottom: 10px;
+  /* Añadido para mejorar la legibilidad */
+  line-height: 1.2;
 }
 
-.sidebar:hover .links h4 {
+.sidebar:hover .category-list h4 {
   display: block;
 }
 
-.links hr {
-  margin: 10px 8px;
-  border: 1px solid #4c4c4c;
-}
 
-.sidebar:hover .links hr {
+
+.sidebar:hover .category-list hr {
   border-color: transparent;
 }
 
-.links li span {
+.category-list li span {
   padding: 12px 10px;
 }
 
-.links li a {
+.category-list li a {
   padding: 10px;
   color: #000;
   display: none;
   font-weight: 500;
   white-space: nowrap;
   text-decoration: none;
+  /* Añadido para mejorar la legibilidad */
+  line-height: 0.6;
 }
 
-.sidebar:hover .links li a {
+.sidebar:hover .category-list li a {
   display: block;
 }
 
-.links .logout-link {
+.category-list .logout-link {
   margin-top: 20px;
 }
 
@@ -346,8 +387,6 @@ button[type="submit"]:hover {
 }
 
 .search-bar-2 {
-  
-  
   width: 80%;
   padding: 0;
 }
@@ -358,6 +397,8 @@ button[type="submit"]:hover {
   border: none;
   border-radius: 8px;
   margin-right: 10px;
+  /* Añadido para mejorar la interactividad */
+  transition: padding 0.3s ease;
 }
 
 .publish-button {
@@ -371,6 +412,8 @@ button[type="submit"]:hover {
   background-color: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(5px);
   z-index: 1;
+  /* Añadido para mejorar la interactividad */
+  transition: background-color 0.3s ease;
 }
 
 .publish-button a {
@@ -378,6 +421,8 @@ button[type="submit"]:hover {
   color: #000;
   font-weight: 500;
   text-decoration: none;
+  /* Añadido para mejorar la legibilidad */
+  line-height: 1.6;
 }
 
 .hidden {
@@ -386,7 +431,6 @@ button[type="submit"]:hover {
   overflow: hidden;
   transition: opacity 0.3s ease, height 0.3s ease;
 }
-
 /* Agrega estilos específicos para dispositivos móviles */
 @media (max-width: 767px) {
   .anuncios-list {
@@ -407,9 +451,5 @@ button[type="submit"]:hover {
     align-items: flex-start;
   }
 
-  .formulario-edicion {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
+
 }
