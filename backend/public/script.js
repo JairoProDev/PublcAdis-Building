@@ -20,7 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       if (respuesta.ok) {
-        const anuncio = await respuesta.json();
+        const respuestaJson = await respuesta.json();
+        console.log(respuestaJson); // Imprimir la respuesta en la consola
+        const anuncio = respuestaJson.anuncio; // Acceder a la propiedad 'anuncio' del objeto de respuesta
         console.log(anuncio); // Imprimir el anuncio en la consola
         agregarAnuncioAlPrincipio(anuncio);
         e.target.reset();
@@ -38,6 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const respuesta = await fetch("/api/anuncios");
       const anuncios = await respuesta.json();
       console.log(anuncios);
+       // Ordenar los anuncios en orden inverso de creación
+      anuncios.reverse();
       showAds(anuncios);
     } catch (error) {
       console.error("Error al obtener los anuncios", error);
