@@ -2,7 +2,7 @@
 node_modules/
 
 # Archivos de configuración locales
-.env
+
 
 # Archivos de construcción y directorios
 /build
