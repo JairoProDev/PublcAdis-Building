@@ -1,6 +1,6 @@
 :root {
-  --main-color: #007bff;
-  --secondary-color: #0056b3;
+  --main-color: #12b2b8;
+  --secondary-color: #0b649c;
   --font-color: #333;
   --placeholder-color: #999;
   --background-color: #f0fcfe;
@@ -26,9 +26,9 @@ body {
 
 /* Header */
 .header {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+  width: 100;
+  margin: 0;
+  padding: 0;
   display: flex;
 }
 
@@ -38,12 +38,12 @@ body {
   max-width: 500px;
   height: 100%;
   margin-left: auto;
-  padding: 0 20px;
+  padding: 0;
 }
 
 .nav-wrapper form input[type="text"],
 .nav-wrapper form button {
-  padding: 5px;
+  padding: 0px;
 }
 
 .nav-wrapper form input[type="text"] {
@@ -63,10 +63,10 @@ body {
 
   flex-grow: 1;
   background-color: rgba(255, 255, 255, 0.2);
-  padding: 20px;
+  padding: 10px;
   border-radius: 15px;
   box-shadow: 10px 24px 16px rgba(0, 0, 0, 0.1);
-  max-width: 300px; /* Limita el ancho del formulario */
+  max-width: 250px; /* Limita el ancho del formulario */
   margin: 0 auto; /* Centra el formulario en la página */
 }
 
@@ -76,7 +76,7 @@ body {
 
 .ad-form {
   background-color: rgba(255, 255, 255, 0.8);
-  padding: 20px;
+  padding: 0px;
   border-radius: 15px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   max-width: 300px;
