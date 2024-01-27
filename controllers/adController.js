@@ -2,10 +2,14 @@ const Ad = require("../models/adModel");
 
 const createAd = async (req, res) => {
   try {
-    const { title, description } = req.body;
+    const { title, description, amount, location, phone, email } = req.body;
     const newAd = new Ad({
       title: title,
       description: description,
+      amount: amount,
+      location: location,
+      phone: phone,
+      email: email,
     });
 
     await newAd.save();
@@ -13,7 +17,8 @@ const createAd = async (req, res) => {
       .status(201)
       .json({ mensaje: "Anuncio creado exitosamente", anuncio: newAd });
   } catch (error) {
-    res.status(500).json({ error: "Error al crear el anuncio" });
+    // res.status(500).json({ error: "Error al crear el anuncio" });
+    res.status(500).json({ error: error.message });
   }
 };
 
@@ -58,6 +63,10 @@ const updateAd = async (req, res) => {
 
     anuncio.title = req.body.title || anuncio.title;
     anuncio.description = req.body.description || anuncio.description;
+    anuncio.amount = req.body.amount || anuncio.amount;
+    anuncio.location = req.body.location || anuncio.location;
+    anuncio.phone = req.body.phone || anuncio.phone;
+    anuncio.email = req.body.email || anuncio.email;
 
     await anuncio.save();
     res.status(200).json({ mensaje: "Anuncio actualizado", anuncio: anuncio });
@@ -83,4 +92,4 @@ const deleteAd = async (req, res) => {
   }
 };
 
-module.exports = { createAd, getAds, getAdById };
+module.exports = { createAd, getAds, getAdById, updateAd, deleteAd};
